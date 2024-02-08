@@ -19,6 +19,9 @@ spec:
         - containerPort: 80
       - name: multitool
         image: praqma/network-multitool:latest
+        ports:
+        - containerPort: 8080
         command:
           - sleep
-          - "3600" 
+          - "3600"
+
