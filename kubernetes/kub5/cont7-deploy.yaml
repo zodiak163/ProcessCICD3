@@ -5,22 +5,22 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: "nginx"
+  ingressClassName: nginx
   rules:
-  - host: myapptest.test
+  - host: myapp.test
     http:
       paths:
       - pathType: Prefix
         path: /
         backend:
           service:
-            name: frontend-backend-service
+            name: front
             port:
               number: 80
       - pathType: Prefix
         path: /api
         backend:
           service:
-            name: backend-service
+            name: back
             port:
               number: 80
