@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: log-reader-daemonset
+  labels:
+    app: log-reader
+spec:
+  selector:
+    matchLabels:
+      app: log-reader
+  template:
+    metadata:
+      labels:
+        app: log-reader
+    spec:
+      containers:
+      - name: multitool
+        image: praqma/network-multitool:latest
+        volumeMounts:
+        - mountPath: /var/log/syslog
+          name: varlog
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log/syslog
+          type: FileOrCreate
