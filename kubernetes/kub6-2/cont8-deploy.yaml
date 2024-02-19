@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-sharing-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-sharing-app
+  template:
+    metadata:
+      labels:
+        app: data-sharing-app
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command:
+            - /bin/sh
+            - -c
+            - while true; do date >> /shared-data/data.txt; sleep 5; done
+          volumeMounts:
+            - name: shared-data
+              mountPath: /shared-data
+        - name: multitool
+          image: praqma/network-multitool:latest
+          volumeMounts:
+            - name: shared-data
+              mountPath: /shared-data
+      volumes:
+        - name: shared-data
+          hostPath:
+            path: /path/on/local/node
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /path/on/local/node
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: local-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

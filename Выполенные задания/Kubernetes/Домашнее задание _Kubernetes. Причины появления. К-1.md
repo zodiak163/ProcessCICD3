@@ -5,13 +5,13 @@
 На локальной отредактировал файл, странно при установке он не создался пришлось ручками. Прописал адрес, скопировал сертификат.
 Проверяю локально 
 
-![a1aeb2a5970d7542eff6c9043745d440.png](../_resources/a1aeb2a5970d7542eff6c9043745d440-1.png)
+![a1aeb2a5970d7542eff6c9043745d440.png](../_resources/a1aeb2a5970d7542eff6c9043745d440-3.png)
 
 
 Ставлю dashboard
 
-![bdf24f1f0331afd3322c45f6d5ebdd10.png](../_resources/bdf24f1f0331afd3322c45f6d5ebdd10-1.png)
+![bdf24f1f0331afd3322c45f6d5ebdd10.png](../_resources/bdf24f1f0331afd3322c45f6d5ebdd10-3.png)
 
 Дашборд
 
-![ffc29c20a2c63f5499fd46dca4fcc20d.png](../_resources/ffc29c20a2c63f5499fd46dca4fcc20d-1.png)
+![ffc29c20a2c63f5499fd46dca4fcc20d.png](../_resources/ffc29c20a2c63f5499fd46dca4fcc20d-3.png)
