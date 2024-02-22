@@ -15,3 +15,5 @@ spec:
       containers:
       - name: multitool
         image: praqma/network-multitool:latest
+        ports:
+          - containerPort: 8080
