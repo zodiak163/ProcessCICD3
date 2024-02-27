@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multitool
+  namespace: test
+spec:
+  containers:
+    - name: multitool
+      image: praqma/network-multitool:latest
+  serviceAccountName: rom
